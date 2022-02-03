@@ -1,0 +1,25 @@
+class Solution 
+{
+public:
+    int removeDuplicates(vector<int>& nums)
+    {
+        if(nums.size() <= 1)
+        {
+            return nums.size();                   //returning the size if its less than 1
+        }
+ 
+        int i = 0;                              //initialising a pointer to compare elements
+
+        for(int j = 1; j < nums.size(); j++)   //traversing through the vector
+        {
+            if(nums[j] != nums[i])             
+            {
+                i++;                         //incrementing the value of pointer if both pointers are unequal
+                nums[i] = nums[j];          //checking for both pointers to be equal in value
+            }
+        }
+
+        return i + 1;
+        
+    }
+};
